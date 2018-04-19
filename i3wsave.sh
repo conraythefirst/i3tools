@@ -32,7 +32,7 @@ then
 		#get window ids from running windows
 		for i in $(i3-msg -t get_tree | jq ".nodes[].nodes[].nodes[] | select(.name==\"$active_ws\")" | grep '"window":' | grep -o '[0-9]*' | awk -Wposix '{printf("0x%08x\n", $1)}')
 		do
-		    #getting pid from windowid
+		    #get pid from windowid
 		    pidof=$(wmctrl -lxp | grep $i | awk '{print $3}')
 
 		    #get command of pid
@@ -44,7 +44,6 @@ then
 
 
 		xterm -bg black -fg white -e "vim $conf_path/$ws.sh"
-		##lxterminal --command="vim $conf_path/$ws.sh"
 
 	fi
 fi
