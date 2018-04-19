@@ -1,6 +1,6 @@
 #!/bin/bash
 
-conf_path=~/.i3tools/workspaces
+conf_path=$HOME
 
 IFS='
 '
