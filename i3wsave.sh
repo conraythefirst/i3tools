@@ -1,6 +1,6 @@
 #!/bin/bash
 
-conf_path=$HOME
+conf_path=$HOME/workspaces
 
 IFS='
 '
