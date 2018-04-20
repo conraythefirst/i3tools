@@ -6,7 +6,9 @@ i3tools
 This is a small shell script to easily save and restore workspaces you've setup once.
 
 Bind this script to a shortcut by putting something like
+```
 	bindsym $mod+Shift+w exec bash /path/to/i3wsave.sh
+```
 in you i3 config
 
 
@@ -14,8 +16,9 @@ It tries to find the commands of the window and generates a new shell script to 
 After saving a workspace it opens xterm with $EDITOR to check the result. 
 
 I'd suggest making the terminal window it opens floating by default
+```
 	for_window [class="XTerm" title="i3wsave"] floating enable
-
+```
 
 ### Dependencies
 	rofi
