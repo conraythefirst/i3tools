@@ -1,6 +1,29 @@
 #!/bin/bash
 
-conf_path=$HOME/workspaces
+#
+# i3wsave.sh
+# Author: conray
+# script to easily save and restore workspaces
+# dependencies:
+#	jq
+#	rofi
+#	wmctrl
+#	xterm
+#
+# ideally use some keybind like
+# bindsym $mod+Shift+w exec bash /path/to/i3wsave.sh
+#
+#/*
+# * ----------------------------------------------------------------------------
+# * "THE BEER-WARE LICENSE" (Revision 42):
+# * <phk@FreeBSD.ORG> wrote this file. As long as you retain this notice you
+# * can do whatever you want with this stuff. If we meet some day, and you think
+# * this stuff is worth it, you can buy me a beer in return Poul-Henning Kamp
+# * ----------------------------------------------------------------------------
+# */
+#
+
+conf_path=$HOME/.config/i3/
 
 IFS='
 '
@@ -42,8 +65,8 @@ then
 		#write commands to .sh file
 		done >> $conf_path/$ws.sh
 
-
-		xterm -bg black -fg white -e "vim $conf_path/$ws.sh"
+		#show generated sh script in terminal
+		xterm -title i3wsave -bg black -fg white -e "vim $conf_path/$ws.sh"
 
 	fi
 fi
