@@ -9,7 +9,7 @@ Bind this script to a shortcut by putting something like
 ```
 	bindsym $mod+Shift+w exec bash /path/to/i3wsave.sh
 ```
-in you i3 config
+in your i3 config.
 
 
 It tries to find the commands of the window and generates a new shell script to automatically open the programs you had running. This might be a bit off under some circumstances. 
