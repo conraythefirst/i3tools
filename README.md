@@ -4,6 +4,7 @@ i3tools
 ## i3wsave.sh
 
 This is a small shell script to easily save and restore workspaces you've setup once.
+It utilizes "rofi" to create an interface for saving and restoring workspaces.
 
 Bind this script to a shortcut by putting something like
 ```
