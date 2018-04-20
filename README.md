@@ -1,7 +1,7 @@
-# i3tools
+i3tools
+=======
 
-i3wsave.sh
-==========
+# i3wsave.sh
 
 This is a small shell script to easily save and restore workspaces you've setup once.
 
