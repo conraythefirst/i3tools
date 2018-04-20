@@ -24,6 +24,7 @@
 #
 
 conf_path=$HOME/.config/i3/
+editor=$EDITOR
 
 IFS='
 '
@@ -66,7 +67,7 @@ then
 		done >> $conf_path/$ws.sh
 
 		#show generated sh script in terminal
-		xterm -title i3wsave -bg black -fg white -e "vim $conf_path/$ws.sh"
+		xterm -title i3wsave -bg black -fg white -e "$editor $conf_path/$ws.sh"
 
 	fi
 fi
