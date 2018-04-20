@@ -13,7 +13,7 @@ Bind this script to a shortcut by putting something like
 in your i3 config.
 
 
-It tries to find the commands of all the windows and generates a new shell script to automatically open the programs you had running. This might be a bit off under some circumstances. 
+It tries to find the commands of all open windows and generates a new shell script to automatically open the programs you had running. This might be a bit off under some circumstances. 
 After saving a workspace it opens xterm with $EDITOR to check the result. 
 
 I'd suggest making the terminal window it opens floating by default
