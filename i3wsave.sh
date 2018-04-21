@@ -42,7 +42,7 @@ IFS='
 '
 
 #rofi
-ws=$(ls -1 $conf_path/ | grep .json | sed 's/.json//' | rofi -dmenu $rofi_opts -i -p "Workspace")
+ws=$(ls -1 $conf_path/ | grep .json | sed 's/.json//' | rofi -dmenu ${rofi_opts[@]} -i -p "Workspace")
 
 
 if [ ! -z $ws ]
