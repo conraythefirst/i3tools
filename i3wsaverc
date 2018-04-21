@@ -1,5 +1,5 @@
 conf_path=$HOME/.config/i3
-editor=vim
+editor=$EDITOR
 terminal=xterm
 terminal_opts=(-fg white -bg black -title i3wsave)
 rofi_opts=()
