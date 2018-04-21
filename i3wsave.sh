@@ -23,14 +23,26 @@
 # */
 #
 
-conf_path=$HOME/.config/i3
-editor=$EDITOR
 
+if [ -e $(dirname $0)/i3wsaverc ]
+then 
+	# load config
+	. $(dirname $0)/i3wsaverc
+else
+	#set default config
+	conf_path=$HOME/.config/i3
+	editor=$EDITOR
+	terminal=xterm
+	terminal_opts=(-bg black -fg white -title i3wsave)
+	rofi_opts=()
+fi
+
+#set seperator
 IFS='
 '
 
 #rofi
-ws=$(ls -1 $conf_path/ | grep .json | sed 's/.json//' | rofi -dmenu -i -p "Workspace")
+ws=$(ls -1 $conf_path/ | grep .json | sed 's/.json//' | rofi -dmenu $rofi_opts -i -p "Workspace")
 
 
 if [ ! -z $ws ]
@@ -67,7 +79,7 @@ then
 		done >> $conf_path/$ws.sh
 
 		#show generated sh script in terminal
-		xterm -title i3wsave -bg black -fg white -e "$editor $conf_path/$ws.sh"
+		$terminal ${terminal_opts[@]} -e "$editor $conf_path/$ws.sh"
 
 	fi
 fi
