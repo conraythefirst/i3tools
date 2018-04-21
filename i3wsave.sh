@@ -23,7 +23,7 @@
 # */
 #
 
-conf_path=$HOME/.config/i3/
+conf_path=$HOME/.config/i3
 editor=$EDITOR
 
 IFS='
@@ -42,7 +42,7 @@ then
 		i3-msg "append_layout $conf_path/$ws.json"
 
 		#start programs
-		sh $conf_path/$ws.sh
+		i3-msg "exec sh $conf_path/$ws.sh"
 	else
 		#save layout
 		i3-save-tree  | sed 's#// "class"#"class"#g;s#// "instance"\(.*\),#"instance"\1#g' >  "$conf_path/$ws.json"
