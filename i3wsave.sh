@@ -57,7 +57,7 @@ then
 		i3-msg "exec sh $conf_path/$ws.sh"
 	else
 		#save layout
-		i3-save-tree  | sed 's#// "class"#"class"#g;s#// "instance"\(.*\),#"instance"\1#g' >  "$conf_path/$ws.json"
+		i3-save-tree  | sed 's#// "class"#"class"#g;s#// "instance"#"instance"#g;s#// "title"#"title"#g;s#// "transient_for"#"transient_for"#g' >  "$conf_path/$ws.json"
 
 		#get current workspace
 		active_ws=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true) | .name' | tr -d '"');
