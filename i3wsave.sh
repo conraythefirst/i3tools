@@ -79,6 +79,7 @@ then
 		done >> $conf_path/$ws.sh
 
 		#show generated sh script in terminal
+		$terminal ${terminal_opts[@]} -e "$editor $conf_path/$ws.json"
 		$terminal ${terminal_opts[@]} -e "$editor $conf_path/$ws.sh"
 
 	fi
