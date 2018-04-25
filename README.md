@@ -29,6 +29,20 @@ I'd suggest making the terminal window it opens floating by default
 
 
 
+## switchScreen.sh
+
+A small script to easily switch focus and move the current workspace to a second screen in a dual screen setup.
+
+```
+	switchScreen.sh move 	#move current workspace to other screen
+	switchScreen.sh focus 	#switch to workspace visible on other screen
+```
+
+### Dependencies
+	jq
+
+
+
 
 ### License: Beerware
 /*
