@@ -44,7 +44,7 @@ A small script to easily switch focus and move the current workspace to a second
 
 
 
-# License: Beerware
+# License
 /*
  * ----------------------------------------------------------------------------
  * "THE BEER-WARE LICENSE" (Revision 42):
