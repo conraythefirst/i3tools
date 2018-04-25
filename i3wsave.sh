@@ -13,15 +13,6 @@
 # ideally use some keybind like
 # bindsym $mod+Shift+w exec bash /path/to/i3wsave.sh
 #
-#/*
-# * ----------------------------------------------------------------------------
-# * "THE BEER-WARE LICENSE" (Revision 42):
-# * <phk@FreeBSD.ORG> wrote this file. As long as you retain this notice you
-# * can do whatever you want with this stuff. If we meet some day, and you think
-# * this stuff is worth it, you can buy me a beer in return Poul-Henning Kamp
-# * ----------------------------------------------------------------------------
-# */
-#
 
 
 if [ -e $(dirname $0)/i3wsaverc ]
@@ -57,7 +48,7 @@ then
 		i3-msg "exec sh $conf_path/$ws.sh"
 	else
 		#save layout
-		i3-save-tree  | sed 's#// "class"#"class"#g;s#// "instance"#"instance"#g;s#// "title"#"title"#g;s#// "transient_for"#"transient_for"#g' >  "$conf_path/$ws.json"
+		i3-save-tree  | sed 's#// "class"#"class"#g;s#// "instance"#"instance"#g;s#// "title"#"title"#g;s#// "transient_for":\([^,]*\),\?#"transient_for":\1#g' >  "$conf_path/$ws.json"
 
 		#get current workspace
 		active_ws=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true) | .name' | tr -d '"');
