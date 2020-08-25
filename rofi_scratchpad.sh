@@ -20,8 +20,8 @@ for entry in $(i3-msg -t get_tree | jq -r '.nodes[].nodes[].nodes[] | select(.na
 do 
 	IFS=','
 	set -- $entry
-	val='[instance="'$1'" class="'$2'" title="'$3'"]'
-	key=$(echo 'i:'$1' t:'$3' c:'$3)
+	val='[instance="'"$1"'" class="'"$2"'" title="'"$3"'"]'
+	key='i:'"$1"' t:'"$3"' c:'"$3"
 	entries["$key"]="$val"
 
 done
