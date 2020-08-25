@@ -31,7 +31,7 @@ I'd suggest making the terminal window it opens floating by default
 
 ## switchScreen.sh
 
-A small script to easily switch focus and move the current workspace to a second screen in a dual screen setup.
+Easily switch focus and move the current workspace to a second screen in a dual screen setup.
 
 ```
 	./switchScreen.sh move 	#move current workspace to other screen
@@ -40,6 +40,21 @@ A small script to easily switch focus and move the current workspace to a second
 
 ### Dependencies
 	jq
+
+
+
+
+## rofi_scratchpad.sh
+
+Select window to show from scratchpad with rofi.
+
+```
+	./rofi_scratchpad.sh
+```
+
+### Dependencies
+	jq
+	rofi
 
 
 
