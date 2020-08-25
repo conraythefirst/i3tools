@@ -21,7 +21,7 @@ do
 	IFS=','
 	set -- $entry
 	val='[instance="'"$1"'" class="'"$2"'" title="'"$3"'"]'
-	key='i:'"$1"' t:'"$3"' c:'"$3"
+	key='i:'"$1"' t:'"$3"' c:'"$2"
 	entries["$key"]="$val"
 
 done
