@@ -22,12 +22,18 @@ do
 	set -- $entry
 	val='[instance="'"$1"'" class="'"$2"'" title="'"$3"'"]'
 	key='i:'"$1"' t:'"$3"' c:'"$2"
-	entries["$key"]="$val"
+        if [ -z ${entries["$key"]} ]
+	then
+		entries["$key"]="$val"
+	else
+		key="$key $RANDOM"
+		entries["$key"]="$val"
+	fi
 
 done
 
 # rofi select window
-ret="$(for e in ${!entries[@]}; do echo $e;done | rofi -dmenu -i -p Scratchpad)"
+ret="$(printf '%s\n' ${!entries[@]} | rofi -dmenu -i -p Scratchpad)"
 
 if [ -z $ret ];then
 	exit
